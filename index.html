@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniCommerce — AI Marketing Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <div class="logo-icon">&#9889;</div>
+      <span>Omni<span class="grad-text">Commerce</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#">Product</a>
+      <a href="#">Pricing</a>
+      <a href="#">Docs</a>
+      <button class="btn-ghost">Sign In</button>
+    </div>
+  </nav>
+
+  <!-- ── VIEW: INPUT ── -->
+  <section id="view-input" class="view active">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+
+    <div class="hero-inner">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Powered by Gemini 2.0 &amp; Veo 3.1
+      </div>
+
+      <h1 class="hero-headline">
+        Turn any product URL into<br />
+        <span class="grad-text">cinematic video ads</span><br />
+        and high-converting copy
+      </h1>
+
+      <p class="hero-sub">
+        Paste a link. In seconds, our AI orchestrator scrapes, analyzes,
+        and produces a full marketing suite — localized for every market,
+        optimized for every platform.
+      </p>
+
+      <div class="input-card" id="input-card">
+        <span class="input-icon">&#127760;</span>
+        <input
+          id="url-input"
+          type="url"
+          placeholder="https://store.example.com/products/your-product"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button class="btn-primary" id="generate-btn">
+          Generate <span class="arrow">&#8594;</span>
+        </button>
+      </div>
+
+      <p class="input-hint" id="input-error" style="display:none;">Please paste a URL to continue.</p>
+
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-num">12,400+</span>
+          <span class="stat-label">Campaigns Generated</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">98 Languages</span>
+          <span class="stat-label">Auto-Localized</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">3.8× avg ROAS</span>
+          <span class="stat-label">Performance Lift</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIEW: PROCESSING ── -->
+  <section id="view-processing" class="view">
+    <div class="orbital-wrap">
+      <!-- SVG orbital drawn by JS -->
+      <canvas id="orbital-canvas" width="220" height="220"></canvas>
+      <div class="orbital-center-icon">&#9889;</div>
+    </div>
+
+    <h2 class="processing-title">Building your <span class="grad-text">Marketing Suite</span></h2>
+
+    <ul class="steps-list" id="steps-list">
+      <li class="step" data-step="0">
+        <span class="step-icon"></span>
+        <span class="step-label">Scraping product URL and extracting details…</span>
+        <span class="step-badge">DONE</span>
+      </li>
+      <li class="step" data-step="1">
+        <span class="step-icon"></span>
+        <span class="step-label">Analyzing images and generating ad copy with Gemini 2.0…</span>
+        <span class="step-badge">DONE</span>
+      </li>
+      <li class="step" data-step="2">
+        <span class="step-icon"></span>
+        <span class="step-label">Rendering cinematic video ad via Veo 3.1…</span>
+        <span class="step-badge">DONE</span>
+      </li>
+      <li class="step" data-step="3">
+        <span class="step-icon"></span>
+        <span class="step-label">Applying multi-language lip-syncing and localization…</span>
+        <span class="step-badge">DONE</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ── VIEW: RESULTS ── -->
+  <section id="view-results" class="view">
+
+    <!-- Top bar -->
+    <header class="results-header">
+      <div class="results-breadcrumb">
+        <div class="logo-icon small">&#9889;</div>
+        <span>OmniCommerce / <strong id="product-name">Product</strong></span>
+      </div>
+      <div class="results-actions">
+        <button class="btn-ghost" id="reset-btn">&#8635; New URL</button>
+        <button class="btn-primary small">&#8679; Export Suite</button>
+      </div>
+    </header>
+
+    <div class="results-body">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <button class="sidebar-item active" data-nav="0">
+            <span>&#9632;</span> Dashboard
+          </button>
+          <button class="sidebar-item" data-nav="1">
+            <span>&#9650;</span> Analytics
+          </button>
+          <button class="sidebar-item" data-nav="2">
+            <span>&#9881;</span> Settings
+          </button>
+        </nav>
+        <div class="sidebar-quote">
+          <div class="quote-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"3.8× ROAS uplift in first campaign week."</p>
+          <span>— Marketing Lead, Apex Co.</span>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="results-main">
+
+        <!-- Section 1: Ad Copy -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon purple">&#10024;</div>
+            <div>
+              <h2>Generated Ad Copy</h2>
+              <p class="card-sub">Gemini 2.0 · High-conversion mode</p>
+            </div>
+            <div class="tag-row">
+              <span class="tag cyan">Hook</span>
+              <span class="tag cyan">Primary</span>
+              <span class="tag cyan">CTA</span>
+            </div>
+          </div>
+
+          <div class="copy-block hook-block">
+            <div class="copy-label purple-label">HOOK</div>
+            <p class="hook-text">Stop scrolling. Your next obsession just arrived.</p>
+            <button class="copy-btn" data-copy="Stop scrolling. Your next obsession just arrived.">
+              &#128203; Copy
+            </button>
+          </div>
+
+          <div class="copy-block primary-block">
+            <div class="copy-label cyan-label">PRIMARY TEXT</div>
+            <p class="primary-text">Engineered for those who refuse to settle. Precision-crafted materials meet a design language that turns heads before you say a word. Whether you're closing deals or chasing horizons — this is the tool that keeps up. Limited stock. Zero compromises.</p>
+            <button class="copy-btn" data-copy="Engineered for those who refuse to settle. Precision-crafted materials meet a design language that turns heads before you say a word. Whether you're closing deals or chasing horizons — this is the tool that keeps up. Limited stock. Zero compromises.">
+              &#128203; Copy
+            </button>
+          </div>
+
+          <div class="copy-block cta-block">
+            <div class="copy-label violet-label">CALL TO ACTION</div>
+            <p class="cta-text">Shop Now — Free Shipping Over $75</p>
+            <button class="copy-btn" data-copy="Shop Now — Free Shipping Over $75">
+              &#128203; Copy
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 2: Video Player -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon cyan">&#127909;</div>
+            <div>
+              <h2>Cinematic Video Ad</h2>
+              <p class="card-sub">Veo 3.1 · 4K HDR · Generated in 38s</p>
+            </div>
+          </div>
+
+          <div class="platform-tabs">
+            <button class="platform-tab active" data-platform="YouTube Pre-Roll · 0:15">&#128250; YouTube Pre-Roll <span class="tab-time">0:15</span></button>
+            <button class="platform-tab" data-platform="Instagram Reel · 0:30">&#128247; Instagram Reel <span class="tab-time">0:30</span></button>
+            <button class="platform-tab" data-platform="TikTok Vertical · 0:60">&#127908; TikTok Vertical <span class="tab-time">0:60</span></button>
+          </div>
+
+          <div class="video-player">
+            <div class="video-letterbox top"></div>
+            <div class="video-letterbox bottom"></div>
+            <div class="video-glow glow-left"></div>
+            <div class="video-glow glow-right"></div>
+            <div class="video-center">
+              <button class="play-btn" id="play-btn">&#9654;</button>
+              <p class="video-label">Veo 3.1 · <span id="platform-label">YouTube Pre-Roll</span></p>
+              <p class="video-sub">Preview renders in production environment</p>
+            </div>
+            <button class="mute-btn" id="mute-btn">&#128266;</button>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-row">
+              <span class="time-label" id="time-label">0s / 30s</span>
+              <div class="video-actions">
+                <button class="btn-ghost small">&#8599; Preview Full</button>
+                <button class="btn-primary small">&#11015; Download Video</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Localization -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon amber">&#127758;</div>
+            <div>
+              <h2>Localization &amp; Lip-Sync Studio</h2>
+              <p class="card-sub">8 languages · Neural lip-sync applied</p>
+            </div>
+            <span class="badge-complete">&#10003; All Complete</span>
+          </div>
+
+          <div class="lang-grid" id="lang-grid">
+            <button class="lang-btn active" data-lang="English">🇺🇸 <span>English</span><small>EN · Lip-synced</small><span class="check">&#10003;</span></button>
+            <button class="lang-btn" data-lang="Spanish">🇪🇸 <span>Spanish</span><small>ES · Lip-synced</small><span class="check">&#10003;</span></button>
+            <button class="lang-btn" data-lang="French">🇫🇷 <span>French</span><small>FR · Lip-synced</small><span class="check">&#10003;</span></button>
+            <button class="lang-btn" data-lang="German">🇩🇪 <span>German</span><small>DE · Lip-synced</small><span class="check">&#10003;</span></button>
+            <button class="lang-btn" data-lang="Japanese">🇯🇵 <span>Japanese</span><small>JA · Lip-synced</small><span class="check">&#10003;</span></button>
+            <button class="lang-btn" data-lang="Mandarin">🇨🇳 <span>Mandarin</span><small>ZH · Lip-synced</small><span class="check">&#10003;</span></button>
+            <button class="lang-btn" data-lang="Arabic">🇸🇦 <span>Arabic</span><small>AR · Lip-synced</small><span class="check">&#10003;</span></button>
+            <button class="lang-btn" data-lang="Portuguese">🇧🇷 <span>Portuguese</span><small>PT · Lip-synced</small><span class="check">&#10003;</span></button>
+          </div>
+
+          <div class="waveform-panel">
+            <div class="waveform-header">
+              <span class="mic-label">&#127908; <span id="active-lang-label">English</span> Preview</span>
+              <span class="neural-badge">&#9679; Neural voice active</span>
+            </div>
+            <div class="waveform-row">
+              <button class="play-btn small" id="wave-play-btn">&#9654;</button>
+              <div class="waveform" id="waveform"></div>
+              <span class="time-label">0:30</span>
+            </div>
+            <div class="waveform-actions">
+              <button class="btn-ghost small" id="export-lang-btn">&#11015; Export English</button>
+              <button class="btn-ghost small">&#8679; Performance Data</button>
+              <button class="btn-primary small">&#127760; Export All 8 Languages</button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
